@@ -26,7 +26,7 @@ void  naperdel(int count_treads, vector<vector<double>> &abobus,double* abobus_p
 }
 
 vector<vector<double>> sanya_sun (string stroka){
-    ifstream ifpatok(stroka);
+    ifstream ifpatok(stroka, std::ios::binary);
     int a;
     int b;
     ifpatok >> a >> b;
