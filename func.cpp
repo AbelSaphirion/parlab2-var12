@@ -3,6 +3,8 @@
 #include <vector>
 #include <omp.h>
 #include <iterator>
+#include <fstream>
+#include <chrono>
 #include "func.h"
 using namespace std;
 
@@ -21,4 +23,27 @@ void  naperdel(int count_treads, vector<vector<double>> &abobus,double* abobus_p
         abobus_pomenshe[j]=abobus[i][j];
        }
     }  
+}
+
+vector<vector<double>> sanya_sun (string stroka){
+    ifstream ifpatok(stroka);
+    int a;
+    int b;
+    ifpatok >> a >> b;
+    vector<vector<double>> scania (a,vector <double>(b));
+     for (int i=0; i<a; i++){
+    
+       for (int j=0; j<b; j++){
+       ifpatok >> scania[i][j];
+       }
+     }
+    return scania;
+}
+
+double zamer (int count_treads, vector<vector<double>> &abobus,double* abobus_pomenshe){
+    auto t1=chrono::high_resolution_clock::now();
+    naperdel(count_treads,abobus,abobus_pomenshe);
+    auto t2=chrono::high_resolution_clock::now();
+    chrono::duration<double,milli> ms_double = t2-t1;
+    return ms_double.count();
 }
