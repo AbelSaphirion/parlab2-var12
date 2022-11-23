@@ -1,0 +1,18 @@
+name: Build dev
+
+on:
+  push:
+    branches: [ "dev" ]
+  workflow_dispatch:
+
+jobs:
+  build-dev:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: install openmp
+      run: sudo apt update && sudo apt install libomp-dev
+    - name: make
+      run: make main
