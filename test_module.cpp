@@ -21,9 +21,9 @@ BOOST_AUTO_TEST_CASE(assert_double){
 	double arr_max[3];
 	naperdel(4, arr, arr_max);
 	BOOST_CHECK(arr[0][0] == 2);
-	BOOST_CHECK(arr[0][1] == -2);
-	BOOST_CHECK(arr[0][2] == 6);
-	BOOST_CHECK(arr[1][0] == 2);
+	BOOST_CHECK(arr[1][0] == -2);
+	BOOST_CHECK(arr[2][0] == 6);
+	BOOST_CHECK(arr[0][1] == 2);
 	BOOST_CHECK(arr[1][1] == 0);
-	BOOST_CHECK(arr[1][2] == -2);
+	BOOST_CHECK(arr[2][1] == -2);
 }
