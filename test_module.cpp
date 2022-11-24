@@ -1,7 +1,4 @@
 #include "func.h"
-#include <atomic>
-#include <mutex>
-#include <thread>
 #include <vector>
 #define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MODULE Test
