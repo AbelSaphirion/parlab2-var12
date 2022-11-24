@@ -40,3 +40,10 @@ BOOST_AUTO_TEST_CASE(nonesquared){
 	BOOST_CHECK(arr2[0][3] == 4);
 	BOOST_CHECK(arr_max2[3] == 7);
 }
+
+BOOST_AUTO_TEST_CASE(negative_max){
+	vector<vector<double>> arr = {{-1, -2, -3}, {-4, -32, -5}, {-3, -2, -1}};
+	double arr_max[3];
+	naperdel(4, arr, arr_max);
+	BOOST_CHECK(arr_max[0] == -2);
+}
