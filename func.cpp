@@ -15,7 +15,7 @@ void  naperdel(int count_treads, vector<vector<double>> &abobus,double* abobus_p
 	{
 		#pragma omp for
 		for(int i = 0; i < y; i++)
-			abobus_pomenshe[i] = abobus[0][i] * (i % 2 + 1);
+			abobus_pomenshe[i] = abobus[0][i] * (2 - (i % 2));
 		#pragma omp for reduction(max:abobus_pomenshe[:y]) collapse(2)
 		for (int i=0; i<x; i++){
 			for (int j=0; j<y; j++){
